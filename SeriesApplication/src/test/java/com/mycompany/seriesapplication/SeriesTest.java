@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class SeriesTest {
     
-  // 1. Test searching for a series that exists
+  // test searching for a series that exists
     @Test
     public void TestSearchSeries() {
         Series seriesApp = new Series();
@@ -21,11 +21,11 @@ public class SeriesTest {
 
         String result = seriesApp.searchSeries("103");
 
-        // It should return details containing the series name
+        //should return details containing series name
         assertTrue(result.contains("Home Cooking"));
     }
 
-    // 2. Test searching for a series that does not exist
+    // test searching for a series that does not exist
     @Test
     public void TestSearchSeries_SeriesNotFound() {
         Series seriesApp = new Series();
@@ -35,7 +35,7 @@ public class SeriesTest {
         assertEquals("Series with Series Id: 999 was not found!", result);
     }
 
-    // 3. Test deleting a series that exists
+    // test deleting a series that exists
     @Test
     public void TestDeleteSeries() {
         Series seriesApp = new Series();
@@ -47,7 +47,7 @@ public class SeriesTest {
         assertEquals("Series with Series Id: 103 was not found!", seriesApp.searchSeries("103"));
     }
 
-    // 4. Test deleting a series that does not exist
+    // test deleting a series that does not exist
     @Test
     public void TestDeleteSeries_SeriesNotFound() {
         Series seriesApp = new Series();
@@ -57,7 +57,7 @@ public class SeriesTest {
         assertFalse(deleted);
     }
 
-    // 5. Test valid age restriction is accepted
+    // test valid age restriction is accepted
     @Test
     public void TestSeriesAgeRestriction_AgeValid() {
         Series seriesApp = new Series();
@@ -67,7 +67,7 @@ public class SeriesTest {
         assertTrue(inserted);
     }
 
-    // 6. Test invalid age restriction is rejected
+    // test invalid age restriction is rejected
     @Test
     public void TestSeriesAgeRestriction_SeriesAgeInValid() {
         Series seriesApp = new Series();
@@ -78,4 +78,5 @@ public class SeriesTest {
         assertFalse(insertedLow);
         assertFalse(insertedHigh);
     }
+
 }
